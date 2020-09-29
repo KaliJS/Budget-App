@@ -1,0 +1,7 @@
+export const ADD_EXPENSE_ITEM = 'ADD_EXPENSE_ITEM';
+export const ADD_INCOME_ITEM = 'ADD_INCOME_ITEM';
+export const CHANGE_TARGET = 'CHANGE_TARGET';
+export const INIT_BUDGET = 'INIT_BUDGET';
+export const GET_INIT_BUDGET = 'GET_INIT_BUDGET';
+export const REMOVE_BUDGET_ITEM = 'REMOVE_BUDGET_ITEM';
+

@@ -1,0 +1,37 @@
+{
+  "name": "my-app-server",
+  "version": "1.0.0",
+  "description": "server for smart-brain app",
+  "main": "server.js",
+  "scripts": {
+    "my-app-install": "npm install --prefix my-app",
+    "start": "node server.js",
+    "server": "node server.js",
+    "my-app": "npm start --prefix my-app",
+    "smart-brain": "concurrently \"npm run server\" \"npm run my-app\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix my-app && npm run build --prefix my-app"
+  },
+  "author": "Khalid Ali",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.2.0",
+    "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.6",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "handlebars": "^4.5.3",
+    "method-override": "^3.0.0",
+    "moment": "^2.24.0",
+    "mongoose": "^5.6.3",
+    "passport": "^0.4.1",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "uuid": "^3.3.3"
+  }
+}

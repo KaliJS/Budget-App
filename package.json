@@ -6,7 +6,7 @@
   "scripts": {
     "my-app-install": "npm install --prefix my-app",
     "start": "node server.js",
-    "server": "node server.js",
+    "server": "nodemon server.js",
     "my-app": "npm start --prefix my-app",
     "smart-brain": "concurrently \"npm run server\" \"npm run my-app\"",
     "test": "echo \"Error: no test specified\" && exit 1",

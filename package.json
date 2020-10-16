@@ -10,7 +10,8 @@
     "my-app": "npm start --prefix my-app",
     "smart-brain": "concurrently \"npm run server\" \"npm run my-app\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-	"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix my-app && npm run build --prefix my-app"
+	"heroku-postbuild": 
+	"NPM_CONFIG_PRODUCTION=false npm install --prefix my-app && npm run build --prefix my-app"
   },
   "author": "Khalid Ali",
   "license": "MIT",

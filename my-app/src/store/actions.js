@@ -1,9 +1,11 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
 
+axios.defaults.baseURL = 'http://localhost:5000';
+
 export const addBudgetData = (data) => {
 	return dispatch => {
-		axios.post('http://localhost:3001/postIncome', data, { headers: { 'Content-Type': 'application/json', } })
+		axios.post('/postIncome', data, { headers: { 'Content-Type': 'application/json', } })
 		.then(response=>{
 			dispatch( initBudget(response.data) );
 			dispatch( getBudget() );
@@ -14,9 +16,8 @@ export const addBudgetData = (data) => {
 
 export const getBudget =  () => {
 	return dispatch => {
-    axios.get('http://localhost:3001/budgets')
+    axios.get('/budgets')
     .then(res=>{
-      console.log(res.data);
       dispatch(getInitBudget(res.data));
       dispatch(getOverAllBudget());
     })
@@ -26,9 +27,8 @@ export const getBudget =  () => {
 
 export const getOverAllBudget =  () => {
 	return dispatch => {
-    axios.get('http://localhost:3001/')
+    axios.get('/')
     .then(res=>{
-	  console.log(res.data.percentage);
       dispatch(initBudget(res.data));
     })
 
@@ -58,7 +58,6 @@ export const addExpenseItem = (value) => {
 };
 
 export const initBudget = (data) => {
-	console.log(data);
 	return{
 		type: actionTypes.INIT_BUDGET,
 		data: data
@@ -67,7 +66,7 @@ export const initBudget = (data) => {
 
 export const removeBudgetItem = (id) => {
 	return dispatch => {
-		axios.delete(`http://localhost:3001/${id}`)
+		axios.delete(`/${id}`)
 		.then((res)=>{
 			dispatch( getBudget() );
 			console.log(res.data);

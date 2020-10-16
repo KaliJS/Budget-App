@@ -7,8 +7,7 @@ class ExpenseItem extends Component {
 
 render(){
 
-let expenseItems;
-let expensePercentage;
+    let expenseItems;
     let budgetData;
     budgetData = this.props.data.filter(data => data.target !== 'inc' );
     if (this.props.data || this.props.data.length > 0){

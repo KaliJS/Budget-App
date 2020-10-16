@@ -16,10 +16,7 @@ app.use(bodyParser.json());
 //cors middleware
 app.use(cors());
 
-//setting port...
-const port = process.env.PORT || 3000;
 
-app.listen(port,()=>{console.log(`server is running on port no. ${port}`)})
 
 let DUMMY_BUDGET = [];
 let MAIN_BUDGET = {
@@ -30,13 +27,13 @@ let MAIN_BUDGET = {
 };
 
 
-// if(process.env.NODE_ENV == 'production'){
-	// app.use(express.static('my-app/build'));
-	// app.get('*',(req,res) => {
-		// res.sendFile(path.resolve(__dirname, 'my-app', 'build', 'index.html'));
-	// });
-// }
-
+ if(process.env.NODE_ENV == 'production'){
+	app.use(express.static('my-app/build'));
+	 app.get('*',(req,res) => {
+		 res.sendFile(path.resolve(__dirname, 'my-app', 'build', 'index.html'));
+	 });
+ }
+ 
 
 app.get('/budgets', (req, res, next) => {
   res.status(200).json(DUMMY_BUDGET);
@@ -110,6 +107,12 @@ app.delete('/:id', (req,res) => {
  }
   res.json(MAIN_BUDGET);
 })
+
+
+//setting port...
+const port = process.env.PORT || 5000;
+
+app.listen(port,()=>{console.log(`server is running on port no. ${port}`)})
 
 
 

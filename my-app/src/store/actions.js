@@ -9,6 +9,7 @@ export const addBudgetData = (data) => {
 		.then(response=>{
 			dispatch( initBudget(response.data) );
 			dispatch( getBudget() );
+			console.log(response);
 		})
 		.catch(err => console.log(err.response))
 	}

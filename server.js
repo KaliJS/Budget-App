@@ -41,8 +41,8 @@ app.get('/budgets', (req, res, next) => {
 
 app.post('/postIncome', (req, res, next) => {
    if(MAIN_BUDGET.income !== 0){
-   MAIN_BUDGET.percentage = (MAIN_BUDGET.expense/MAIN_BUDGET.income)*100;
- }
+     MAIN_BUDGET.percentage = (MAIN_BUDGET.expense/MAIN_BUDGET.income)*100;
+   }
   const { description, amount, target } = req.body;
 
   if (!description || description.trim().length === 0 || !amount || amount <= 0) {
@@ -112,7 +112,8 @@ app.delete('/:id', (req,res) => {
 //setting port...
 const port = process.env.PORT || 5000;
 
-app.listen(port,()=>{console.log(`server is running on port no. ${port}`)})
+app.listen(port,(req,res,next)=>{console.log(`server is running on port no. ${port}`)
+})
 
 
 

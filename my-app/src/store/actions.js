@@ -21,6 +21,7 @@ export const getBudget =  () => {
     .then(res=>{
       dispatch(getInitBudget(res.data));
       dispatch(getOverAllBudget());
+      console.log(res);
     })
 
    }
@@ -31,6 +32,7 @@ export const getOverAllBudget =  () => {
     axios.get('/')
     .then(res=>{
       dispatch(initBudget(res.data));
+      console.log(res);
     })
 
    }

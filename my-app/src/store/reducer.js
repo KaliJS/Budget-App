@@ -28,14 +28,14 @@ const budgetReducer = (state = initialState, action) => {
 		case actionTypes.ADD_INCOME_ITEM:
 			return {
 				...state,
-				income: state.income - action.value,
-				total: state.total - action.value
+				income: state.income + action.value,
+				total: state.total + action.value
 			}
 		case actionTypes.ADD_EXPENSE_ITEM:
 			return {
 				...state,
-				expense: state.expense - action.value,
-				total: state.total + action.value
+				expense: state.expense + action.value,
+				total: state.total - action.value
 			}
 		default:return state
 	}

@@ -10,7 +10,7 @@ class Input extends Component {
       description: '',
       amount: 0,
       target: 'inc'
-    }    
+    }
   }
 
   changeElement = (event) => {

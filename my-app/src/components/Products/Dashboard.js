@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 
 const Dashboard = props => {
 
-let now = new Date();
-let year = now.getFullYear();
+  let now = new Date();
+  let year = now.getFullYear();
 
-let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-let month = now.getMonth();
-let date = now.getDate();
+  let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  let month = now.getMonth();
+  let date = now.getDate();
 
 
   return(
